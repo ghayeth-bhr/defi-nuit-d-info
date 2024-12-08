@@ -1,0 +1,28 @@
+{
+    "question": {
+        "id": 1,
+        "enonce": "Qu'est-ce qui prend le plus de part dans notre empreinte carbone en France ?",
+        "reponses": [
+            {
+                "id": 1,
+                "enonce": "L'alimentation",
+                "correcte": false
+            },
+            {
+                "id": 2,
+                "enonce": "L'habitat",
+                "correcte": false
+            },
+            {
+                "id": 3,
+                "enonce": "Les déplacements",
+                "correcte": true
+            },
+            {
+                "id": 4,
+                "enonce": "Les équipements",
+                "correcte": false
+            }
+        ]
+    }
+}

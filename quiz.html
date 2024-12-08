@@ -1,0 +1,184 @@
+<!-- Nuit de l'info 2023 - Équipe : PolyCartel - Établissement : Polytech Tours -->
+<!DOCTYPE html>
+<html lang="fr" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuit de l'Info 2023</title>
+    <link href="./styles/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body class="h-100 text-white" style="background-color:  rgba(14, 215, 237, 0.85);">
+    <div class="d-flex justify-content-center align-items-center h-100 flex-column">
+        <style>
+            .btn-green {
+                background-color: green;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .btn-green:hover {
+                background-color: darkgreen;
+            }
+        </style>
+
+
+
+
+
+
+
+
+
+        <script>
+            var obj = null;
+            // Updated Question 1
+            const json1 = `{
+                "question": {
+                    "id": 1,
+                    "enonce": "Humans and oceans are both made up of about 70% water. In humans, dehydration slows down the body’s functions. In oceans, pollution and acidification disturb marine ecosystems. What can this teach us about the importance of water quality?",
+                    "reponses": [
+                        {"id": 1, "enonce": "Both lead to system-wide breakdowns and require proper care.", "correcte": true},
+                        {"id": 2, "enonce": "Only humans are affected by poor water quality.", "correcte": false},
+                        {"id": 3, "enonce": "Oceans can recover on their own, while humans cannot.", "correcte": false},
+                        {"id": 4, "enonce": "There is no connection between the two.", "correcte": false}
+                    ]
+                }
+            }`;
+        
+            // Updated Question 2
+            const json2 = `{
+                "question": {
+                    "id": 2,
+                    "enonce": "The human circulatory system moves nutrients and oxygen to keep us alive. Ocean currents do a similar job for the planet by moving nutrients and regulating the climate. What happens if these systems stop working properly?",
+                    "reponses": [
+                        {"id": 1, "enonce": "Only small areas are affected.", "correcte": false},
+                        {"id": 2, "enonce": "There are widespread problems, requiring quick action to fix them.", "correcte": true},
+                        {"id": 3, "enonce": "Humans adapt easily, but the planet cannot.", "correcte": false},
+                        {"id": 4, "enonce": "There is no major impact.", "correcte": false}
+                    ]
+                }
+            }`;
+        
+            // Updated Question 3
+            const json3 = `{
+                "question": {
+                    "id": 3,
+                    "enonce": "Only 2.5% of Earth’s water is freshwater, and less than 1% is available for human use. Similarly, only a small part of the water in our body supports critical functions like brain activity. What does this teach us about managing limited water resources?",
+                    "reponses": [
+                        {"id": 1, "enonce": "There is no need to worry about water scarcity.", "correcte": false},
+                        {"id": 2, "enonce": "Small reserves of water play a big role, so we must protect them.", "correcte": true},
+                        {"id": 3, "enonce": "The Earth’s water supply is unlimited, unlike the water in our bodies.", "correcte": false},
+                        {"id": 4, "enonce": "Water conservation is only important for humans, not the planet.", "correcte": false}
+                    ]
+                }
+            }`;
+        
+            const obj1 = JSON.parse(json1);
+            const obj2 = JSON.parse(json2);
+            const obj3 = JSON.parse(json3);
+            const list_obj = [obj1, obj2, obj3];
+            var compteur = 0;
+        
+        
+
+            document.addEventListener("DOMContentLoaded", function () {
+                obj = list_obj[compteur];
+                document.getElementById("titre_question").innerText = "Question " + obj.question.id;
+                document.getElementById("enonce_question").innerText = obj.question.enonce;
+                document.getElementById("btn_reponseA").innerText = obj.question.reponses[0].enonce;
+                document.getElementById("btn_reponseB").innerText = obj.question.reponses[1].enonce;
+                document.getElementById("btn_reponseC").innerText = obj.question.reponses[2].enonce;
+                document.getElementById("btn_reponseD").innerText = obj.question.reponses[3].enonce;
+            });
+
+            function verif() {
+                var btnA = document.getElementById("btn_reponseA");
+                var btnB = document.getElementById("btn_reponseB");
+                var btnC = document.getElementById("btn_reponseC");
+                var btnD = document.getElementById("btn_reponseD");
+                var liste_btn = [btnA, btnB, btnC, btnD];
+                for (var i = 0; i < liste_btn.length; i++) {
+                    if (obj.question.reponses[i].correcte == false) {
+                        liste_btn[i].classList.remove("btn-success");
+                        liste_btn[i].classList.add("btn-danger");
+                    }
+                    else{
+                        liste_btn[i].classList.add("btn-green");
+                        
+                    }
+                }
+
+                if(compteur == 2) {
+                    document.getElementById("btn_terminer").classList.remove("d-none");
+                } else {
+                    document.getElementById("btn_suivant").classList.remove("d-none");
+                }
+            }
+
+            function suivant() {
+                document.getElementById("btn_suivant").classList.add("d-none");
+
+                var btnA = document.getElementById("btn_reponseA");
+                var btnB = document.getElementById("btn_reponseB");
+                var btnC = document.getElementById("btn_reponseC");
+                var btnD = document.getElementById("btn_reponseD");
+                var liste_btn = [btnA, btnB, btnC, btnD];
+                for (var i = 0; i < liste_btn.length; i++) {
+                    liste_btn[i].classList.remove("btn-danger");
+                    liste_btn[i].classList.add("btn-success");
+                    liste_btn[i].classList.remove("btn-green");
+                }
+                compteur++;
+                obj = list_obj[compteur];
+                document.getElementById("titre_question").innerText = "Question " + obj.question.id;
+                document.getElementById("enonce_question").innerText = obj.question.enonce;
+                document.getElementById("btn_reponseA").innerText = obj.qu.estion.reponses[0].enonce;
+                document.getElementById("btn_reponseB").innerText = obj.question.reponses[1].enonce;
+                document.getElementById("btn_reponseC").innerText = obj.question.reponses[2].enonce;
+                document.getElementById("btn_reponseD").innerText = obj.question.reponses[3].enonce;
+
+            }
+        </script>
+
+        <h1 id="titre_question">Question X</h1>
+        <p id="enonce_question" class="text-center m-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id venenatis nulla. 
+            Duissit amet blandit odio, eget ultricies metus. Aliquam ornare sit amet justo a pulvinar. Etiam vitae pharetra
+            ipsum. Morbi massa tellus, dapibus ac enim a, aliquet tristique mauris. Curabitur maximus tellus sed erat
+            mollis ultrices.
+        </p>
+        <div class="container">
+            <div class="row m-1">
+                <button id="btn_reponseA" class="btn btn-success border-white p-4 col m-3" onclick="verif()">Réponse
+                    A</button>
+                <button id="btn_reponseB" class="btn btn-success border-white p-4 col m-3" onclick="verif()">Réponse
+                    B</button>
+            </div>
+            <div class="row m-1">
+                <button id="btn_reponseC" class="btn btn-success border-white p-4 col m-3" onclick="verif()">Réponse
+                    C</button>
+                <button id="btn_reponseD" class="btn btn-success border-white p-4 col m-3" onclick="verif()">Réponse
+                    D</button>
+            </div>
+        </div>
+        <button id="btn_suivant" class="btn btn-success border-white p-4 fw-bold d-none" onclick="suivant()">Question suivante</button>
+        <a href="index.html" id="btn_terminer" class="btn btn-success border-white p-4 fw-bold d-none">Terminer le quiz</a>
+    </div>
+
+    <script src="./scripts/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/script.js"></script>
+    <footer class="fixed-bottom">
+        <div class="row bg-success">
+            <span class="col-4"></span>
+            <p class="col-4 text-center mb-1 mt-1">Nuit de l'Info 2024 - EnigmaCoders</p>
+           
+        </div>
+    </footer>
+</body>
+
+</html>

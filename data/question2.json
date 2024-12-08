@@ -1,0 +1,28 @@
+{
+    "question": {
+        "id": 2,
+        "enonce": "Quelle part le CO2 représente-t-il dans les émissions de gaz à effet de serre ?",
+        "reponses": [
+            {
+                "id": 1,
+                "enonce": "45%",
+                "correcte": false
+            },
+            {
+                "id": 2,
+                "enonce": "55%",
+                "correcte": false
+            },
+            {
+                "id": 3,
+                "enonce": "65%",
+                "correcte": false
+            },
+            {
+                "id": 4,
+                "enonce": "75%",
+                "correcte": true
+            }
+        ]
+    }
+}

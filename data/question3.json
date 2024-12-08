@@ -1,0 +1,28 @@
+{
+    "question": {
+        "id": 3,
+        "enonce": "Quel était la limitation de la hausse de la température signée par les accords de Paris en 2015 ?",
+        "reponses": [
+            {
+                "id": 1,
+                "enonce": "1°C en 200 ans",
+                "correcte": false
+            },
+            {
+                "id": 2,
+                "enonce": "2°C en 200 ans",
+                "correcte": true
+            },
+            {
+                "id": 3,
+                "enonce": "2°C en 300 ans",
+                "correcte": false
+            },
+            {
+                "id": 4,
+                "enonce": "3°C en 300 ans",
+                "correcte": false
+            }
+        ]
+    }
+}

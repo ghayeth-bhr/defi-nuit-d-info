@@ -1,0 +1,17 @@
+/* Nuit de l'info 2023 - Équipe : PolyCartel - Établissement : Polytech Tours */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat");
+
+body {
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/main_background.svg"); */
+    background-color: black;
+    background-size: cover;
+    background-position: top;
+    font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, p {
+    font-family: "Montserrat", sans-serif;
+}
+
